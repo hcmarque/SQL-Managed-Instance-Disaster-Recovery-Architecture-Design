@@ -29,8 +29,7 @@ In order to ilustrate what you will have at the end of this deployment, please f
 Check here  [link to pair regions!](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the option available that makes sense for your deployment.
 
 E2E SQL-Managed Instance Architecture:
-![Architecture](github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/sqlmiarchitecture.png)
-
+<img src="Images/sqlmiarchitecture.png">
 
 ## E2E Architecture (visio)
 The Visio version can be found here [link to visio!](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/SQLMI-DR.vsdx)
@@ -47,7 +46,8 @@ For the First Step, let’s create your Infrastructure, which include the follow
 ## Step 1:
 1.	Create the Resource Group that will be used for both Instances (Primary and Secondary – Those needs to be under the same Resource Group, otherwise your Failover Group wont work on later step)
 
-![step1](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/picture01.png)
+<img src="Images/picture01.png">
+
 
 
 
