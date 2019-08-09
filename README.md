@@ -6,6 +6,11 @@ This document provide the Best Practice guidence for the SQL-Managed Instance im
 
 The entire process can be implemented by Azure Resource Manager configuration, Powershell, ARM Templates or Infrastructure as a Code using Terraform. This Step by Step guide covers the first scenario which is using Azure Resouce Manager.
 
+In order to undertand the SQL Managed Instance Resource Limits, check [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits) for more information. Few points to higlight. 
+* Gen 4 vs Gen 5;
+* Managed instance has two service tiers: General Purpose and Business Critical. These tiers provide different capabilities, as described in this [table](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
+
+
 ## Introduction
 **SQL Database Managed Instance** is a deployment option in Azure SQL Database that is highly compatible with SQL Server, providing out-of-the-box support for most SQL Server features and accompanying tools and services. 
 Managed Instance also provides native virtual network (VNET) support for an isolated, highly-secure environment to run your applications. Now you can combine the rich SQL Server programming surface area in the cloud with the operational and financial benefits of an intelligent, fully-managed database service, making Managed Instance the best PaaS destination for your SQL Server workloads.
@@ -181,7 +186,8 @@ Misconfigured NSG security rules leads to stuck database copy operations.
   <img src="Images/picture20.png" alt="drawing" width="600"/>
 </p>
 
-* 4.3 The reference for each paramenter can be found below, however, check your company requirements for each one of the parameters before to create the Virtual Network Gateway and once again, **be sure that you dont have any IP Address with your on-premise networking.** `Click on Review + Create`.
+* 4.3 Check the informations used on the paramters described on the picture below. Please check this [table](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways#benchmark) to undertand which VPN Gateway SKU should be used in your enviroment. In this example, the VPN Gateway SKU VpnGw3AZ was used due the Aggregate Throughput requirement for 1.25 Gbps and the Zone-Redudant requirement. After complete the parameters, click in `Review + Create`
+**important** please use the IP Address that you assigned to your environment.  **be sure that you dont have any IP Address with your on-premise networking.** `Click on Review + Create`.
 
 <p align="center">
   <img src="Images/picture21.png" alt="drawing" width="600"/>
@@ -194,13 +200,56 @@ Misconfigured NSG security rules leads to stuck database copy operations.
   <img src="Images/picture22.png" alt="drawing" width="600"/>
 </p>
 
-* 4.5 This process will take few minutes to be completed, in meanwhile, let’s create the VPN GW for another region, EAST-US2 at this time. 
+* 4.5 This process will take around 30 minutes to be completed, in meanwhile, let’s create the VPN GW for another region, EAST-US2 at this time. 
 Back to the Virtual Network Page space and click `+ Add` to create the new VPN GW
 
 <p align="center">
   <img src="Images/picture23.png" alt="drawing" width="600"/>
 </p>
 
+
+* 4.6 Check the informations used on the paramters described on the picture below. Please check this [table](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways#benchmark) to undertand which VPN Gateway SKU should be used in your enviroment. In this example, the VPN Gateway SKU VpnGw3AZ was used due the Aggregate Throughput requirement for 1.25 Gbps and the Zone-Redudant requirement. After complete the parameters, click in `Review + Create`
+**important** please use the IP Address that you assigned to your environment.  **be sure that you dont have any IP Address with your on-premise networking.**
+
+<p align="center">
+  <img src="Images/picture24.png" alt="drawing" width="600"/>
+</p>
+
+* 4.7 As soon as the validation passed, click in `Create`
+
+<p align="center">
+  <img src="Images/picture25.png" alt="drawing" width="600"/>
+</p>
+
+* 4.8 The process to create the VPN Gateway will take around 30 minutes to complete. 
+As soon as booth VPN Gateways were created, back to the Github-Network Resource group (or the name that you used for the Network), select `gateway-centralus` and click on the `VPN Gateway Central`, click on `Connections` and `+ Add` in order to create a new connection between booth VPN GWs (CENTRAL-US and EAST-US2) that was just created on the steps above.
+
+<p align="center">
+  <img src="Images/picture29.png" alt="drawing" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/picture26.png" alt="drawing" width="600"/>
+</p>
+
+* 4.9 Add a connection now named `centralus-to-eastus2` with the followng parameters. Chose for the second virtual network gateway and select the vpn gateway available (that was just created). Fill all parameters and click `OK`
+
+<p align="center">
+  <img src="Images/picture27.png" alt="drawing" width="600"/>
+</p>
+
+* 4.10 back to the Github-Network Resource group (or the name that you used for the Network), select `gateway-eastus2` and click on the `VPN Gateway Central`, click on `Connections` and `+ Add` in order to create a new connection between booth VPN GWs (CENTRAL-US and EAST-US2) that was just created on the steps above.
+
+<p align="center">
+  <img src="Images/picture29.png" alt="drawing" width="600"/>
+</p>
+
+
+* 4.11 Add a connection now named `eastus2-to-centralus` with the followng parameters. Chose for the second virtual network gateway and select the vpn gateway available (that was just created). Fill all parameters and click `OK`
+
+<p align="center">
+  <img src="Images/picture30.png" alt="drawing" width="600"/>
+</p>
 
 
 
