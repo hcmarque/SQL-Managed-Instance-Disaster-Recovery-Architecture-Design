@@ -4,7 +4,7 @@ Powered by: Hugo Marques - Azure Architect
 
 This document provide the Best Practice guidence for the SQL-Managed Instance implementation considering a Disaster Recovery Architecture with a full Failover Group configured.
 
-ALl process can be implemented by Azure Resource Manager configuration, Powershell, ARM Templates or Infrastructure as a Code using Terraform. This Step by Step guide covers the first scenario which is using Azure Resouce Manager.
+The entire process can be implemented by Azure Resource Manager configuration, Powershell, ARM Templates or Infrastructure as a Code using Terraform. This Step by Step guide covers the first scenario which is using Azure Resouce Manager.
 
 ## Introduction
 **SQL Database Managed Instance** is a deployment option in Azure SQL Database that is highly compatible with SQL Server, providing out-of-the-box support for most SQL Server features and accompanying tools and services. 
@@ -119,17 +119,35 @@ Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Net
 
 ## Step 3: Create the Virtual Network on booth Regions
 
-* 3.1 Create the Virtual Network Clicking in Add and type Virtual Network. Click in Create as demonstrated on the picture below.
+* 3.1 Inside of the MarketPlace, search for Virtual Netowork and create the Virtual Network clicking in `Create` as demonstrated on the picture below.
 
 <p align="center">
   <img src="Images/picture14.png" alt="drawing" width="600"/>
 </p>
 
 
+* 3.2 The following parameters will be used for this deployment. Use the names according with your Company/Department requirements. 
+**Important: Use your own Ip Address Range, and be sure that you are not overlaying your On-Premise IP Address Range Network. The IP Address used in this example was used for this specif use case.**
+
+<p align="center">
+  <img src="Images/picture15.png" alt="drawing" width="600"/>
+</p>
 
 
+* 3.3 Back to your Github-Network Resource Group and `+ Add` a new Network
 
+<p align="center">
+  <img src="Images/picture16.png" alt="drawing" width="600"/>
+</p>
 
+* 3.4 Configure now the new Virtual Network considering another region, in this scenario the Central US was used. The following parameters will be used for this deployment. Use the names according with your Company/Department requirements. 
+**Important: Use your own Ip Address Range, and be sure that you are not overlaying your On-Premise IP Address Range Network. The IP Address used in this example was used for this specif use case.**
+
+<p align="center">
+  <img src="Images/picture17.png" alt="drawing" width="600"/>
+</p>
+
+* 3.5 
 
 
 
