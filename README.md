@@ -1,5 +1,4 @@
 # SQL-Managed Instance / Disaster Recovery Architecture Details and Step by Step Implementation 
-# *Hugo Marques - CLoud Architect*
 SQL Managed Instance Installation process - Step by Step to Disaster Recovery - Ready for Massive roll out 
 Powered by: Hugo Marques - Azure Architect
 
@@ -19,6 +18,7 @@ In order to ilustrate what you will have at the end of this deployment, please f
 Check here  [link to pair regions!](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the option available that makes sense for your deployment.
 
 E2E SQL-Managed Instance Architecture:
+
 <img src="Images/sqlmiarchitecture.png">
 
 ## E2E Architecture (visio)
@@ -34,13 +34,19 @@ For the First Step, let’s create your Infrastructure, which include the follow
 
 
 ## Step 1:
-1.	Create the Resource Group that will be used for both Instances (Primary and Secondary – Those needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
+* Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
 
 <img src="Images/picture01.png">
 
-## Step 2:
-2.	Create the Resource Group that will be used for both Instances (Primary and Secondary – Those needs to be under the same Resource Group, otherwise your Failover Group wont work on later step)
+* Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
+Now CLick on `Review + Create`.
 
 <img src="Images/picture02.png">
+
+* As soon as you have the Validation passed green light, click on `Create`
+
+<img src="Images/picture03.png">
+
+
 
 
