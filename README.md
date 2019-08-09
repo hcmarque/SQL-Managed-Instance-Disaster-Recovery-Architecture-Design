@@ -12,6 +12,9 @@ In order to undertand the SQL Managed Instance Resource Limits, check [here](htt
 * Gen 4 vs Gen 5;
 * Managed instance has two service tiers: General Purpose and Business Critical. These tiers provide different capabilities, as described in this [table](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 
+## Steps that will be used on this guide:
+
+
 
 ## Introduction
 **SQL Database Managed Instance** is a deployment option in Azure SQL Database that is highly compatible with SQL Server, providing out-of-the-box support for most SQL Server features and accompanying tools and services. 
