@@ -17,8 +17,8 @@ In order to undertand the SQL Managed Instance Resource Limits, check [here](htt
 * [Requirements for the SQL Managed Instances in Disaster Recovery implementation](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#requirements-to-have-your-disaster-recovery-implementation-working)
 * [Create the Resouce Groups](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-1-main-activity-create-two-resources-groups---sql-mi-and-network)
 * [DDoS Standard Configuration](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-2-ddos-standard-design)
-* [Create the Virtual Network on Booth Regions](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-3-create-the-virtual-network-on-booth-regions)
-* [Create the Virtual Network Gateways and Connections](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-4-create-the-network-gateways-to-connect-the-booth-regions-in-this-scenario-east-us2-and-central-us)
+* [Create the Virtual Network on Both Regions](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-3-create-the-virtual-network-on-both-regions)
+* [Create the Virtual Network Gateways and Connections](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-4-create-the-network-gateways-to-connect-the-both-regions-in-this-scenario-east-us2-and-central-us)
 
 
 
@@ -112,7 +112,7 @@ Search for `DDoS protection plans` and then create a protection plan following t
 </p>
 
 * 2.2 DDoS Parameters:
-Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for booth Regions, in this step will be to CENTRAL-US. Click in `Review + Create` and then, `Create` after the Validation.
+Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for both Regions, in this step will be to CENTRAL-US. Click in `Review + Create` and then, `Create` after the Validation.
 
 <p align="center">
   <img src="Images/picture09.png" alt="drawing" width="600"/>
@@ -125,7 +125,7 @@ Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Net
   <img src="Images/picture10.png" alt="drawing" width="600"/>
 </p>
 
-* 2.4 Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for booth Regions, in this step will be to EAST-US2. Click in `Review + Create` and then, `Create` after the Validation.
+* 2.4 Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for both Regions, in this step will be to EAST-US2. Click in `Review + Create` and then, `Create` after the Validation.
 
 <p align="center">
   <img src="Images/picture11.png" alt="drawing" width="600"/>
@@ -142,7 +142,7 @@ Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Net
 </p>
 
 
-## Step 3: Create the Virtual Network on booth Regions
+## Step 3: Create the Virtual Network on both Regions
 
 * 3.1 Inside of the MarketPlace, search for Virtual Netowork and create the Virtual Network clicking in `Create` as demonstrated on the picture below.
 
@@ -179,7 +179,7 @@ Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Net
 </p>
 
 
-## Step 4: Create the Network Gateways to connect the booth Regions (In this scenario, EAST-US2 and CENTRAL-US)
+## Step 4: Create the Network Gateways to connect the both Regions (In this scenario, EAST-US2 and CENTRAL-US)
 
 Enabling geo-replication between managed instances and their VNets: (this reference can be found [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group#enabling-geo-rCreeplication-between-managed-instances-and-their-vnets)
 
@@ -242,7 +242,7 @@ Back to the Virtual Network Page space and click `+ Add` to create the new VPN G
 </p>
 
 * 4.8 The process to create the VPN Gateway will take around 30 minutes to complete. 
-As soon as booth VPN Gateways were created, back to the Github-Network Resource group (or the name that you used for the Network), select `gateway-centralus` and click on the `VPN Gateway Central`, click on `Connections` and `+ Add` in order to create a new connection between booth VPN GWs (CENTRAL-US and EAST-US2) that was just created on the steps above.
+As soon as both VPN Gateways were created, back to the Github-Network Resource group (or the name that you used for the Network), select `gateway-centralus` and click on the `VPN Gateway Central`, click on `Connections` and `+ Add` in order to create a new connection between both VPN GWs (CENTRAL-US and EAST-US2) that was just created on the steps above.
 
 <p align="center">
   <img src="Images/picture29.png" alt="drawing" width="600"/>
@@ -258,7 +258,7 @@ As soon as booth VPN Gateways were created, back to the Github-Network Resource 
   <img src="Images/picture27.png" alt="drawing" width="600"/>
 </p>
 
-* 4.10 back to the Github-Network Resource group (or the name that you used for the Network), select `gateway-eastus2` and click on the `VPN Gateway Central`, click on `Connections` and `+ Add` in order to create a new connection between booth VPN GWs (CENTRAL-US and EAST-US2) that was just created on the steps above.
+* 4.10 back to the Github-Network Resource group (or the name that you used for the Network), select `gateway-eastus2` and click on the `VPN Gateway Central`, click on `Connections` and `+ Add` in order to create a new connection between both VPN GWs (CENTRAL-US and EAST-US2) that was just created on the steps above.
 
 <p align="center">
   <img src="Images/picture29.png" alt="drawing" width="600"/>
@@ -280,7 +280,7 @@ As soon as booth VPN Gateways were created, back to the Github-Network Resource 
 </p>
 
 
-* 4.12 Back to the Network Resource Group, in this example, named `Github-Network` and check that the booth Connections were created. At this step you have created the following Network compoments.
+* 4.12 Back to the Network Resource Group, in this example, named `Github-Network` and check that the both Connections were created. At this step you have created the following Network compoments.
 
 <p align="center">
   <img src="Images/picture33.png" alt="drawing" width="600"/>
