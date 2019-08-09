@@ -59,7 +59,7 @@ Now CLick on `Review + Create`.
 
 * 1.6 - Resource Group Summary for the SQL-Managed Instance Disaster Recovery Implementation:
 
-<img src="Images/picture06.png">
+<img src="Images/picture07.png">
 
 ## Step 2: DDoS Standard Design
 
@@ -70,7 +70,32 @@ Azure DDoS standard protection is a premium paid service that offers enhanced DD
 
 Search for `DDoS protection plans` and then create a protection plan following the steps below:
 
-<img src="Images/picture07.png">
+<img src="Images/picture08.png">
+
+* 2.2 DDoS Parameters:
+Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for booth Regions, in this step will be to CENTRAL-US. Click in `Review + Create` and then, `Create` after the Validation.
+
+<img src="Images/picture09.png">
+
+
+* 2.3 Create now for another region that you will launch your second instance: 
+
+<img src="Images/picture10.png">
+
+* 2.4 Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for booth Regions, in this step will be to EAST-US2. Click in `Review + Create` and then, `Create` after the Validation.
+
+<img src="Images/picture11.png">
+
+<img src="Images/picture12.png">
+
+* 2.5 Back now to the Network Resource Group to see that the DDoS Protection Plan was created and is ready to be attached to a vnet that you will create now.
+
+<img src="Images/picture13.png">
+
+
+## Step 3: Create the Virtual Network on booth Regions
+
+* 3.1 Create the Virtual Network Clicking in Add and type Virtual Network. Click in Create as demonstrated on the picture below.
 
 
 
