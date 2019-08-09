@@ -500,7 +500,17 @@ VALUES
 GO
 ```
 
-<p align="center">
-  <img src="Images/picture63.png" alt="drawing" width="600"/>
-</p>
+* 6.17 Query the table and view the results
+The results of a query are visible below the query text window. To query the Customers table and view the rows that were previously inserted, follow these steps:
+Paste the following T-SQL code snippet into the query window, and then select Execute:
 
+```
+-- Select rows from table 'Customers'
+SELECT * FROM dbo.Customers;
+```
+
+* 6.18 From Github-SQMI Resource Group, you will be able to see that the TutorialDB is deployed at EastUS2 Region.
+
+<p align="center">
+  <img src="Images/picture64.png" alt="drawing" width="600"/>
+</p>
