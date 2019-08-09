@@ -373,4 +373,71 @@ You would run PowerShell code shown on your quick start, either in Azure Cloud S
   <img src="Images/picture45.png" alt="drawing" width="600"/>
 </p>
 
+* 6.6 Click on the Jumpbox Virtual Machine and `connect` the RDP. click on `Download RDP File`.
+
+<p align="center">
+  <img src="Images/picture45.png" alt="drawing" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/picture46.png" alt="drawing" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/picture47.png" alt="drawing" width="600"/>
+</p>
+
+* 6.7 Enter the Credentials that you used on the previous Steps to access the Virtual Machine and access the SSMS (SQL Server Management Studio). Start SQL Server Management Studio. The first time you run SSMS, the Connect to Server window opens. If it doesn't open, you can open it manually by selecting Object Explorer > Connect > Database Engine.
+
+<p align="center">
+  <img src="Images/picture50.png" alt="drawing" width="600"/>
+</p>
+
+* 6.8 Connect the SQL-MI from the SSMS using the login that you created, the password and the Server name that can be found here:
+
+<p align="center">
+  <img src="Images/picture51.png" alt="drawing" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/picture52.png" alt="drawing" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/picture53.png" alt="drawing" width="600"/>
+</p>
+
+* 6.7 The connection below shows thart you are connected to the SQL-MI.
+
+<p align="center">
+  <img src="Images/picture54.png" alt="drawing" width="600"/>
+</p>
+
+* 6.8 Create a database
+Create a database named TutorialDB by following the below steps:
+Right-click your server instance in Object Explorer, and then select New Query:
+
+<p align="center">
+  <img src="Images/picture54.png" alt="drawing" width="600"/>
+</p>
+
+* 6.9 Into the query window, paste the following T-SQL code snippet:
+
+```
+USE master
+GO
+IF NOT EXISTS (
+   SELECT name
+   FROM sys.databases
+   WHERE name = N'TutorialDB'
+)
+CREATE DATABASE [TutorialDB]
+GO
+```
+* 6.10 To execute the query, select Execute (or select F5 on your keyboard).
+
+<p align="center">
+  <img src="Images/picture56.png" alt="drawing" width="600"/>
+</p>
+
 
