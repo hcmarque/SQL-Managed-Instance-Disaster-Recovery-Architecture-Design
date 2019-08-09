@@ -147,8 +147,26 @@ Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Net
   <img src="Images/picture17.png" alt="drawing" width="600"/>
 </p>
 
-* 3.5 
+* 3.5 Check back to the Github-Network Resource Group that you have the following resources deployed at your environment. 
+<p align="center">
+  <img src="Images/picture18.png" alt="drawing" width="600"/>
+</p>
 
+
+## Step 4: Create the Network Gateways to connect the booth Regions (In this scenario, EAST-US2 and CENTRAL-US)
+
+Enabling geo-replication between managed instances and their VNets: (this reference can be found [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group#enabling-geo-rCreeplication-between-managed-instances-and-their-vnets)
+
+When you set up a failover group between primary and secondary managed instances in two different regions, each instance is isolated using an independent virtual network. To allow replication traffic between these VNets ensure these prerequisites are met:
+1.	The two managed instances need to be in different Azure regions.
+2.	The two managed instances need to be the same service tier, and have the same storage size.
+3.	Your secondary managed instance must be empty (no user databases).
+4.	The virtual networks used by the the managed instances need to be connected through a VPN Gateway or Express Route. When two virtual networks connect through an on-premises network, ensure there is no firewall rule blocking ports 5022, and 11000-11999. Global VNet Peering is not supported.
+5.	The two managed instance VNets cannot have overlapping IP addresses.
+6.	You need to set up your Network Security Groups (NSG) such that ports 5022 and the range 11000~12000 are open inbound and outbound for connections from the other managed instanced subnet. This is to allow replication traffic between the instances
+Important
+Misconfigured NSG security rules leads to stuck database copy operations.
+7.	The secondary instance is configured with the correct DNS zone ID. DNS zone is a property of a managed instance and its ID is included in the host name address. The zone ID is generated as a random string when the first managed instance is created in each VNet and the same ID is assigned to all other instances in the same subnet. Once assigned, the DNS zone cannot be modified. Managed instances included in the same failover group must share the DNS zone. You accomplish this by passing the primary instance's zone ID as the value of DnsZonePartner parameter when creating the secondary instance.
 
 
 
