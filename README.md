@@ -19,7 +19,9 @@ In order to undertand the SQL Managed Instance Resource Limits, check [here](htt
 * [DDoS Standard Configuration](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-2-ddos-standard-design)
 * [Create the Virtual Network on Both Regions](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-3-create-the-virtual-network-on-both-regions)
 * [Create the Virtual Network Gateways and Connections](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-4-create-the-network-gateways-to-connect-the-both-regions-in-this-scenario-east-us2-and-central-us)
-
+* [Create the SQL Managed Instance on the Fisrt Region](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-5-create-the-sql-managed-instance-on-the-first-region)
+* [SSMS Connection to your First SQL Managed Instance](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-6-ssms-connection-to-your-sql-managed-instance)
+* [Create the SQL Managed Instance on the Second Region](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-7-create-a-second-sql-managed-instance)
 
 
 ## Introduction
