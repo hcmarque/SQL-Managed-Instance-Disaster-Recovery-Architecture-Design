@@ -437,7 +437,7 @@ GO
 * 6.10 To execute the query, select Execute (or select F5 on your keyboard).
 
 <p align="center">
-  <img src="Images/picture56.png" alt="drawing" width="600"/>
+  <img src="Images/picture58.png" alt="drawing" width="600"/>
 </p>
 
 
