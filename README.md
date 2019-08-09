@@ -178,16 +178,28 @@ Misconfigured NSG security rules leads to stuck database copy operations.
 * 4.2 Click in `Create Virtual Network Gateway`
 
 <p align="center">
-  <img src="Images/picture19.png" alt="drawing" width="600"/>
-</p>
-
-* 4.3 The reference for each paramenter can be found below, however, check your company requirements for each one of the parameters before to create the Virtual Network Gateway and once again, **be sure that you dont have any IP Address with your on-premise networking` 
-
-<p align="center">
   <img src="Images/picture20.png" alt="drawing" width="600"/>
 </p>
 
+* 4.3 The reference for each paramenter can be found below, however, check your company requirements for each one of the parameters before to create the Virtual Network Gateway and once again, **be sure that you dont have any IP Address with your on-premise networking.** `Click on Review + Create`.
 
+<p align="center">
+  <img src="Images/picture21.png" alt="drawing" width="600"/>
+</p>
+
+
+* 4.4 As soon as you have the Validation Passed, click in `Create`
+
+<p align="center">
+  <img src="Images/picture22.png" alt="drawing" width="600"/>
+</p>
+
+* 4.5 This process will take few minutes to be completed, in meanwhile, let’s create the VPN GW for another region, EAST-US2 at this time. 
+Back to the Virtual Network Page space and click `+ Add` to create the new VPN GW
+
+<p align="center">
+  <img src="Images/picture23.png" alt="drawing" width="600"/>
+</p>
 
 
 
