@@ -514,3 +514,42 @@ SELECT * FROM dbo.Customers;
 <p align="center">
   <img src="Images/picture64.png" alt="drawing" width="600"/>
 </p>
+
+# Step 7: Create a Second SQL Managed Instance. 
+
+* 7.1 So, after created the first instance, network, gateway and tested creating a first DB using SSMS, it’s time to create the second Instance on the Pair region, in our case, CENTRAL-US. Click `+ Add`
+
+<p align="center">
+  <img src="Images/picture65.png" alt="drawing" width="600"/>
+</p>
+
+* 7.2 Search for `SQL Managed Instance`
+
+<p align="center">
+  <img src="Images/picture66.png" alt="drawing" width="600"/>
+</p>
+
+* 7.3 Click in `Create`
+
+<p align="center">
+  <img src="Images/picture67.png" alt="drawing" width="600"/>
+</p>
+
+* 7.4 It’s **important** that the Collation and Time zone are the same on booth instances. In case of Collation, check with your developers which Collation are they using on the on-premise implementation. During the SQL Managed Instances Requirments, we saw that the same DNS needs to be use. To garantee that you wont have any problem on that space, be sure to click on `use this instance as Failover Group Secondary`
+
+<p align="center">
+  <img src="Images/picture67.png" alt="drawing" width="600"/>
+</p>
+
+* 7.5 The price Tier that you will use for the Second Instance needs to be exaclty the same as the first one.
+
+<p align="center">
+  <img src="Images/picture68.png" alt="drawing" width="600"/>
+</p>
+
+7.6 After around 4 to 6 hours, the second Instance will be ready for use. As you can see, at this moment there are 2 Managed Instated created (EAST-US2 and CENTRAL-US)
+
+<p align="center">
+  <img src="Images/picture69.png" alt="drawing" width="600"/>
+</p>
+
