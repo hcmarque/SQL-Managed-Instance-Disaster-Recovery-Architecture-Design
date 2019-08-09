@@ -414,7 +414,7 @@ You would run PowerShell code shown on your quick start, either in Azure Cloud S
 </p>
 
 * 6.8 Create a database
-Create a database named TutorialDB by following the below steps:
+Create a database named TutorialDB by following the below steps. This step by step can be found [here](https://docs.microsoft.com/en-us/sql/ssms/tutorials/connect-query-sql-server?view=sql-server-2017) as well.
 Right-click your server instance in Object Explorer, and then select New Query:
 
 <p align="center">
