@@ -33,19 +33,20 @@ For the First Step, let’s create your Infrastructure, which include the follow
 * Please find here more details about the Network Requirements for SQL Managed Instances:  [link to pair regions!](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group#enabling-geo-replication-between-managed-instances-and-their-vnets)
 
 
-## Step 1:
-* Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
+## Step 1: Main Activity: Create two Resources Groups - SQL-MI and Network
+* **1.1** Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
 
 <img src="Images/picture01.png">
 
-* Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
+* **1.2** Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
 Now CLick on `Review + Create`.
 
 <img src="Images/picture02.png">
 
-* As soon as you have the Validation passed green light, click on `Create`
+* **1.3** As soon as you have the Validation passed green light, click on `Create`
 
 <img src="Images/picture03.png">
+
 
 
 
