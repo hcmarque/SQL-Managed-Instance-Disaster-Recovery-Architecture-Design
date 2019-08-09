@@ -148,6 +148,7 @@ Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Net
 </p>
 
 * 3.5 Check back to the Github-Network Resource Group that you have the following resources deployed at your environment. 
+
 <p align="center">
   <img src="Images/picture18.png" alt="drawing" width="600"/>
 </p>
@@ -167,6 +168,28 @@ When you set up a failover group between primary and secondary managed instances
 Important
 Misconfigured NSG security rules leads to stuck database copy operations.
 7.	The secondary instance is configured with the correct DNS zone ID. DNS zone is a property of a managed instance and its ID is included in the host name address. The zone ID is generated as a random string when the first managed instance is created in each VNet and the same ID is assigned to all other instances in the same subnet. Once assigned, the DNS zone cannot be modified. Managed instances included in the same failover group must share the DNS zone. You accomplish this by passing the primary instance's zone ID as the value of DnsZonePartner parameter when creating the secondary instance.
+
+* 4.1 In order to do that, let’s go through the process and follow the step by step as you can see on the next process as follow. Search for `Virtual Network Gateway`
+
+<p align="center">
+  <img src="Images/picture19.png" alt="drawing" width="600"/>
+</p>
+
+* 4.2 Click in `Create Virtual Network Gateway`
+
+<p align="center">
+  <img src="Images/picture19.png" alt="drawing" width="600"/>
+</p>
+
+* 4.3 The reference for each paramenter can be found below, however, check your company requirements for each one of the parameters before to create the Virtual Network Gateway and once again, **be sure that you dont have any IP Address with your on-premise networking` 
+
+<p align="center">
+  <img src="Images/picture20.png" alt="drawing" width="600"/>
+</p>
+
+
+
+
 
 
 
