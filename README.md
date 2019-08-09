@@ -1,5 +1,5 @@
 # SQL-Managed Instance / Disaster Recovery Architecture 
-# Step by Step Implementation - powered by CSU team.
+# Step by Step Implementation
 
 SQL Managed Instance Installation process - Step by Step to Disaster Recovery - Ready for Massive roll out 
 
@@ -19,8 +19,11 @@ In order to undertand the SQL Managed Instance Resource Limits, check [here](htt
 * [Create the Virtual Network on Both Regions](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-3-create-the-virtual-network-on-both-regions)
 * [Create the Virtual Network Gateways and Connections](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-4-create-the-network-gateways-to-connect-the-both-regions-in-this-scenario-east-us2-and-central-us)
 * [Create the SQL Managed Instance on the Fisrt Region](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-5-create-the-sql-managed-instance-on-the-first-region)
-* [SSMS Connection to your First SQL Managed Instance](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-6-ssms-connection-to-your-sql-managed-instance)
+* [SSMS Connection to First SQL Managed Instance](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-6-ssms-connection-to-your-sql-managed-instance)
 * [Create the SQL Managed Instance on the Second Region](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-7-create-a-second-sql-managed-instance)
+* [SSMS Connection to Second SQL Managed Instance](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-8-check-the-connectivity-to-the-second-managed-instance-withthe-ssms-installed-in-another-region---e2e-architecture-test)
+* [Create the Failover Group](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-9-create-the-failover-group)
+
 
 
 ## Introduction
