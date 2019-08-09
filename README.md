@@ -1,25 +1,15 @@
-# SQL-Managed Instance - Disaster Recovery Implementation
+# SQL-Managed Instance / Disaster Recovery Architecture Details and Step by Step Implementation 
+# *Hugo Marques - CLoud Architect*
 SQL Managed Instance Installation process - Step by Step to Disaster Recovery - Ready for Massive roll out 
 Powered by: Hugo Marques - Azure Architect
 
+This document provide the Best Practice guidence for the SQL-Managed Instance implementation considering a Disaster Recovery Architecture with a full Failover Group configured.
 
-The main idea of this document is to provide the guidence of Best Practice of the SQL-Managed Instance implementation considering a Disaster Recovery configuration with a full Failover Group configured
-
-
-
-
-## Setup
-* **Greenfield Deployment**: If you are starting from scratch, refer to these [installation](docs/install-new.md) instructions which outlines steps to deploy an AKS cluster with Application Gateway and install application gateway ingress controller on the AKS cluster.
-* **Brownfield Deployment**: If you have an existing AKS cluster and Application Gateway, refer to these [installation](docs/install-existing.md) instructions to install application gateway ingress controller on the AKS cluster.
-
-## Usage
-Refer to the [tutorials](docs/tutorial.md) to understand how you can expose an AKS service over HTTP or HTTPS, to the internet, using an Azure Application Gateway.
+ALl process can be implemented by Azure Resource Manager configuration, Powershell, ARM Templates or Infrastructure as a Code using Terraform. This Step by Step guide covers the first scenario which is using Azure Resouce Manager.
 
 ## Introduction
 **SQL Database Managed Instance** is a deployment option in Azure SQL Database that is highly compatible with SQL Server, providing out-of-the-box support for most SQL Server features and accompanying tools and services. 
 Managed Instance also provides native virtual network (VNET) support for an isolated, highly-secure environment to run your applications. Now you can combine the rich SQL Server programming surface area in the cloud with the operational and financial benefits of an intelligent, fully-managed database service, making Managed Instance the best PaaS destination for your SQL Server workloads.
-
-This guide has the objective to give you the step by step for every single step to provisioning this SQL Managed Instance project.
 
 
 ## E2E Architecture
@@ -44,10 +34,13 @@ For the First Step, let’s create your Infrastructure, which include the follow
 
 
 ## Step 1:
-1.	Create the Resource Group that will be used for both Instances (Primary and Secondary – Those needs to be under the same Resource Group, otherwise your Failover Group wont work on later step)
+1.	Create the Resource Group that will be used for both Instances (Primary and Secondary – Those needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
 
 <img src="Images/picture01.png">
 
+## Step 2:
+2.	Create the Resource Group that will be used for both Instances (Primary and Secondary – Those needs to be under the same Resource Group, otherwise your Failover Group wont work on later step)
 
+<img src="Images/picture02.png">
 
 
