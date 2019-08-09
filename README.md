@@ -1,6 +1,6 @@
-# SQL-Managed Instance / Disaster Recovery Architecture Details and Step by Step Implementation 
+# SQL-Managed Instance / Disaster Recovery Architecture 
+# Details and Step by Step Implementation 
 SQL Managed Instance Installation process - Step by Step to Disaster Recovery - Ready for Massive roll out 
-Powered by: Hugo Marques - Azure Architect
 
 This document provide the Best Practice guidence for the SQL-Managed Instance implementation considering a Disaster Recovery Architecture with a full Failover Group configured.
 
