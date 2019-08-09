@@ -555,3 +555,70 @@ SELECT * FROM dbo.Customers;
   <img src="Images/picture70.png" alt="drawing" width="600"/>
 </p>
 
+
+# Step 8: Check the connectivity to the Second Managed Instance withthe SSMS installed in another Region - E2E Architecture Test
+
+* 8.1 In this Step, we will test the end to end Architecture Copy the address of the Host that you just created. Host for CENTRAL-US Managed Instance.
+
+<p align="center">
+  <img src="Images/picture71.png" alt="drawing" width="600"/>
+</p>
+
+* 8.2 In this case, Let’s test the end to end connectivity. Basically, now we have to test the connection between the Virtual Machine that we created @ EASTus2 Region towards to the CENTRAL-US Region – using the second Instanced created. Back to Github-Network Resource Group, click on Jumpbox.
+
+<p align="center">
+  <img src="Images/picture72.png" alt="drawing" width="600"/>
+</p>
+
+* 8.3 Click on Connect and Download the RDP file.
+
+<p align="center">
+  <img src="Images/picture73.png" alt="drawing" width="600"/>
+</p>
+
+* 8.4 In order to connect to the Second SQL Managed Instance (Located in CENTRAL-US), use the 
+
+<p align="center">
+  <img src="Images/picture74.png" alt="drawing" width="600"/>
+</p>
+
+
+* 8.5 As you can see, no DB created yet. 
+
+<p align="center">
+  <img src="Images/picture75.png" alt="drawing" width="600"/>
+</p>
+
+
+# Step 9: Create the Failover Group
+
+* 9.1 Creation of Failover Group for the Managed Instance. Back to Resource Group created for the SQL-MI `Github_SQLMI` in this example. And Click on the Primary SQL-MI.
+
+<p align="center">
+  <img src="Images/picture76.png" alt="drawing" width="600"/>
+</p>
+
+* 9.2 Under Settings, click on `Instance Failover` and Click on `Add group`
+
+<p align="center">
+  <img src="Images/picture77.png" alt="drawing" width="600"/>
+</p>
+
+* 9.3 You will see that the First Instance was automatic selected and now you have to select the `Secondary Managed Instance` And select the Read/Write failover group as Manual or Automatic (Depending of your Business Requirement) - In this case, we selected Manual so I can chose when to make the Failover between the regions. And then, click on `Create`.
+
+<p align="center">
+  <img src="Images/picture78.png" alt="drawing" width="600"/>
+</p>
+
+* 9.4 As you can see on the image below, the Failover Group was created between the Regions.
+
+<p align="center">
+  <img src="Images/picture79.png" alt="drawing" width="600"/>
+</p>
+
+* 9.5 Back to the Resouce Group named `Github-SQLMI` and you will see that the TutorialDB that you created to the First region was replicated to the Secnd Region as well.
+
+<p align="center">
+  <img src="Images/picture80.png" alt="drawing" width="600"/>
+</p>
+
