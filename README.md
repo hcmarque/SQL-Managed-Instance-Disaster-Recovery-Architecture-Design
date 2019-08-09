@@ -232,7 +232,7 @@ As soon as booth VPN Gateways were created, back to the Github-Network Resource 
   <img src="Images/picture26.png" alt="drawing" width="600"/>
 </p>
 
-* 4.9 Add a connection now named `centralus-to-eastus2` with the followng parameters. Chose for the second virtual network gateway and select the vpn gateway available (that was just created). Fill all parameters and click `OK`
+* 4.9 Add a connection named `centralus-to-eastus2` with the followng parameters. Chose for the second virtual network gateway and select the vpn gateway available (that was just created). Fill all parameters and click `OK`
 
 <p align="center">
   <img src="Images/picture27.png" alt="drawing" width="600"/>
@@ -244,13 +244,36 @@ As soon as booth VPN Gateways were created, back to the Github-Network Resource 
   <img src="Images/picture29.png" alt="drawing" width="600"/>
 </p>
 
-
-* 4.11 Add a connection now named `eastus2-to-centralus` with the followng parameters. Chose for the second virtual network gateway and select the vpn gateway available (that was just created). Fill all parameters and click `OK`
-
 <p align="center">
   <img src="Images/picture30.png" alt="drawing" width="600"/>
 </p>
 
+<p align="center">
+  <img src="Images/picture31.png" alt="drawing" width="600"/>
+</p>
+
+
+* 4.11 Add a connection named `eastus2-to-centralus` with the followng parameters. Chose for the second virtual network gateway and select the vpn gateway available (that was just created). Fill all parameters and click `OK`
+
+<p align="center">
+  <img src="Images/picture32.png" alt="drawing" width="600"/>
+</p>
+
+
+* 4.12 Back to the Network Resource Group, in this example, named `Github-Network` and check that the booth Connections were created. At this step you have created the following Network compoments.
+
+<p align="center">
+  <img src="Images/picture33.png" alt="drawing" width="600"/>
+</p>
+
+
+## Step 5: Create the SQL Managed Instance on the first region
+
+* 5.1 Click on Resource Groups and select the Github-SQLMI Resource Group. Then, click in `+ Add`.
+
+<p align="center">
+  <img src="Images/picture34.png" alt="drawing" width="600"/>
+</p>
 
 
 
