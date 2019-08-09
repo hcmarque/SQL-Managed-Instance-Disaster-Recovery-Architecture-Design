@@ -13,6 +13,12 @@ In order to undertand the SQL Managed Instance Resource Limits, check [here](htt
 * Managed instance has two service tiers: General Purpose and Business Critical. These tiers provide different capabilities, as described in this [table](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 
 ## Steps that will be used on this guide:
+* [End to End Architecture](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#e2e-architecture)
+* [Requirements for the SQL Managed Instances in Disaster Recovery implementation](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#requirements-to-have-your-disaster-recovery-implementation-working)
+* [Create the Resouce Groups](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-1-main-activity-create-two-resources-groups---sql-mi-and-network)
+* [DDoS Standard Configuration](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-2-ddos-standard-design)
+* [Create the Virtual Network on Booth Regions](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-3-create-the-virtual-network-on-booth-regions)
+* [Create the Virtual Network Gateways and Connections](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-4-create-the-network-gateways-to-connect-the-booth-regions-in-this-scenario-east-us2-and-central-us)
 
 
 
@@ -25,16 +31,7 @@ Managed Instance also provides native virtual network (VNET) support for an isol
 In order to ilustrate what you will have at the end of this deployment, please find here the **end to end Architecture.**
 * Included on this deployment - please consider as **Best Practice** based on numbers of big customers deployment:
 * 2 Regions (MUST be Pair Regions at this moment - this will garantee the Disaster Recovery desing. Across the region pairs Azure serializes platform updates (planned maintenance), so that only one paired region is updated at a time. In the event of an outage affecting multiple regions, at least one region in each pair will be prioritized for recovery. - For the example below, I chose **EAST-US2 and CENTRAL-US.** 
-Check [here](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the Azure Regions orginized in Pairs availables that would help you on your Region definition for your Network Design.
-* Related to the Network configuration, please find [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-howto-managed-instance#network-configuration) details that needs to be considered during your planning session:
-    - Determine size of a managed instance subnet – Managed instance is placed in dedicates subnet that cannot be resized once you add the resources inside. Therefore, you would need to calculate what IP range of addresses would be required for the subnet depending on the number and types of instances that you want to deploy in the subnet.
-    - Create new VNet and a DEDICATED subnet for a managed instance – Azure VNet and subnet where you want to deploy your managed instances must be configured according to the network requirements described here. In this guide you can find the easiest way to create your new VNet and subnet properly configured for managed instances.
-    - Configure existing VNet and subnet for a managed instance – if you want to configure your existing VNet and subnet to deploy managed instances inside, here you can find the script that checks the network requirements and make configures your subnet according to the requirements.
-    - Configure custom DNS – you need to configure custom DNS if you want to access external resources on the custom domains from your managed instance via linked server of db mail profiles.
-Sync network configuration - It might happen that although you integrated your app with an Azure Virtual Network, you can't establish connection to a managed instance. One thing you can try is to refresh networking configuration for your service plan.
-    - Find management endpoint IP address – Managed instance uses public endpoint for management-purposes. You can determine IP address of the management endpoint using the script described here.
-    - Verify built-in firewall protection – Managed instance is protected with built-in firewall that allows the traffic only on necessary ports. You can check and verify the built-in firewall rules using the script described in this guide.
-    - Connect applications – Managed instance is placed in your own private Azure VNet with private IP address. Learn about different patterns for connecting the applications to your managed instance.
+
 
 E2E SQL-Managed Instance Architecture:
 
@@ -50,7 +47,16 @@ For the First Step, let’s create your Infrastructure, which include the follow
 * **VPN Gateways between the Regions;** **Attention:** The virtual networks used by the the managed instances need to be connected through a VPN Gateway or Express Route. When two virtual networks connect through an on-premises network, ensure there is no firewall rule blocking ports 5022, and 11000-11999. Global VNet Peering is **not supported**.
 * **Connections betweem the VPN Gateways;**
 * Please find [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group#enabling-geo-replication-between-managed-instances-and-their-vnets) more details about the Network Requirements for SQL Managed Instances:  
-
+Check [here](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the Azure Regions orginized in Pairs availables that would help you on your Region definition for your Network Design.
+* Related to the Network configuration, please find [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-howto-managed-instance#network-configuration) details that needs to be considered during your planning session:
+    - Determine size of a managed instance subnet – Managed instance is placed in dedicates subnet that cannot be resized once you add the resources inside. Therefore, you would need to calculate what IP range of addresses would be required for the subnet depending on the number and types of instances that you want to deploy in the subnet.
+    - Create new VNet and a DEDICATED subnet for a managed instance – Azure VNet and subnet where you want to deploy your managed instances must be configured according to the network requirements described here. In this guide you can find the easiest way to create your new VNet and subnet properly configured for managed instances.
+    - Configure existing VNet and subnet for a managed instance – if you want to configure your existing VNet and subnet to deploy managed instances inside, here you can find the script that checks the network requirements and make configures your subnet according to the requirements.
+    - Configure custom DNS – you need to configure custom DNS if you want to access external resources on the custom domains from your managed instance via linked server of db mail profiles.
+Sync network configuration - It might happen that although you integrated your app with an Azure Virtual Network, you can't establish connection to a managed instance. One thing you can try is to refresh networking configuration for your service plan.
+    - Find management endpoint IP address – Managed instance uses public endpoint for management-purposes. You can determine IP address of the management endpoint using the script described here.
+    - Verify built-in firewall protection – Managed instance is protected with built-in firewall that allows the traffic only on necessary ports. You can check and verify the built-in firewall rules using the script described in this guide.
+    - Connect applications – Managed instance is placed in your own private Azure VNet with private IP address. Learn about different patterns for connecting the applications to your managed instance.
 
 ## Step 1: Main Activity: Create two Resources Groups - SQL-MI and Network
 * 1.1 - Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
