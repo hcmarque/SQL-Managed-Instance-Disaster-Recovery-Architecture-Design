@@ -319,14 +319,58 @@ As soon as booth VPN Gateways were created, back to the Github-Network Resource 
 </p>
 
 
+* 5.5 On the Price Tier, chose the options that are aligned with your Business Requirements, once again, check the Business Critical vs General Proposal information mentioned on the steps above. Click on `Apply` and then `Create`.
+
+<p align="center">
+  <img src="Images/picture39.png" alt="drawing" width="600"/>
+</p>
 
 
+* 5.6 This process will take around 4 to 6 hours to be completed. As soon as you have the confirmation, click on the resource group and be sure that the Deployments parameters shows now 1 Succeeded.
+Click on the SQL managed instance that you just created:
+
+<p align="center">
+  <img src="Images/picture40.png" alt="drawing" width="600"/>
+</p>
 
 
+## Step 6: SSMS Connection to your SQL Managed Instance
+In this Step, a Windows Jumpbox will be created on the same vnet, separated subnet, so you will be able to access the SQL Managed Instance using SSMS.
 
+* 6.1 Click on the SQL managed instance that you just created:
 
+<p align="center">
+  <img src="Images/picture40.png" alt="drawing" width="600"/>
+</p>
 
+* 6.2 Click on the Quick start:
+Create Virtual Machine with the latest SSMS and attach it to the virtual network
+You would run PowerShell code shown on your quick start, either in Azure Cloud Shell or from your computer to automate this step. In this deployment example, run this from the Azure Cloud Shell:
 
+<p align="center">
+  <img src="Images/picture41.png" alt="drawing" width="600"/>
+</p>
 
+* 6.3 As soon as you click on Cloud Shell, If you don’t have the Storage created yet, select your subscription and the storage will be created automatcliy.
+
+<p align="center">
+  <img src="Images/picture42.png" alt="drawing" width="600"/>
+</p>
+
+* 6.4 As soon the Storage was created, select Powershell and Paste the code under the step 1 below. The only change that have to be made is the password. Copy and Paste the Step 1 to your Powershell and adjust the Passowrd (as mentioned on the previous step)
+
+<p align="center">
+  <img src="Images/picture43.png" alt="drawing" width="600"/>
+</p>
+
+<p align="center">
+  <img src="Images/picture44.png" alt="drawing" width="600"/>
+</p>
+
+* 6.5 Back to the Network Resource Group, in this example, named `Github-Network` and click on the Virtual Machine that was just created.
+
+<p align="center">
+  <img src="Images/picture45.png" alt="drawing" width="600"/>
+</p>
 
 
