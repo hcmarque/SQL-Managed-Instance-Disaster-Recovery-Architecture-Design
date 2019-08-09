@@ -15,7 +15,7 @@ Managed Instance also provides native virtual network (VNET) support for an isol
 In order to ilustrate what you will have at the end of this deployment, please find here the **end to end Architecture.**
 * Included on this deployment - please consider as **Best Practice** based on numbers of big customers deployment:
 * 2 Regions (MUST be Pair Regions at this moment - this will garantee the Disaster Recovery desing. Across the region pairs Azure serializes platform updates (planned maintenance), so that only one paired region is updated at a time. In the event of an outage affecting multiple regions, at least one region in each pair will be prioritized for recovery. - For the example below, I chose **EAST-US2 and CENTRAL-US.** 
-Check [here](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the option available that makes sense for your deployment.
+Check [here](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the Azure Regions orginized in Pairs availables that would help you on your Region definition for your Network Design.
 
 E2E SQL-Managed Instance Architecture:
 
