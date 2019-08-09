@@ -15,14 +15,14 @@ Managed Instance also provides native virtual network (VNET) support for an isol
 In order to ilustrate what you will have at the end of this deployment, please find here the **end to end Architecture.**
 * Included on this deployment - please consider as **Best Practice** based on numbers of big customers deployment:
 * 2 Regions (MUST be Pair Regions at this moment - this will garantee the Disaster Recovery desing. Across the region pairs Azure serializes platform updates (planned maintenance), so that only one paired region is updated at a time. In the event of an outage affecting multiple regions, at least one region in each pair will be prioritized for recovery. - For the example below, I chose **EAST-US2 and CENTRAL-US.** 
-Check here  [link to pair regions!](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the option available that makes sense for your deployment.
+Check [here](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the option available that makes sense for your deployment.
 
 E2E SQL-Managed Instance Architecture:
 
 <img src="Images/sqlmiarchitecture.png">
 
 ## E2E Architecture (visio)
-The Visio version can be found here [link to visio!](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/SQLMI-DR.vsdx)
+The Visio version can be found [here](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/SQLMI-DR.vsdx)
 
 ## Requirements to have your Disaster Recovery Implementation working:
 For the First Step, let’s create your Infrastructure, which include the following: 
@@ -30,7 +30,7 @@ For the First Step, let’s create your Infrastructure, which include the follow
 * **Networks in 2 Azure Regions**: (EAST-US2 and CENTRAL-US in this design;
 * **VPN Gateways between the Regions;** **Attention:** The virtual networks used by the the managed instances need to be connected through a VPN Gateway or Express Route. When two virtual networks connect through an on-premises network, ensure there is no firewall rule blocking ports 5022, and 11000-11999. Global VNet Peering is **not supported**.
 * **Connections betweem the VPN Gateways;**
-* Please find here more details about the Network Requirements for SQL Managed Instances:  [link to pair regions!](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group#enabling-geo-replication-between-managed-instances-and-their-vnets)
+* Please find [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auto-failover-group#enabling-geo-replication-between-managed-instances-and-their-vnets) more details about the Network Requirements for SQL Managed Instances:  
 
 
 ## Step 1: Main Activity: Create two Resources Groups - SQL-MI and Network
