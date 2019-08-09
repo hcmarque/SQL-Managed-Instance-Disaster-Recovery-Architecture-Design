@@ -29,7 +29,7 @@ In order to ilustrate what you will have at the end of this deployment, please f
 Check here  [link to pair regions!](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the option available that makes sense for your deployment.
 
 E2E SQL-Managed Instance Architecture:
-![Architecture](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/sqlmiarchitecture.png)
+![Architecture](github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/Images/sqlmiarchitecture.png)
 
 
 ## E2E Architecture (visio)
