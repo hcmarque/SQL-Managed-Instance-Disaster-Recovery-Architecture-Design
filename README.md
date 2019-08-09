@@ -34,18 +34,48 @@ For the First Step, let’s create your Infrastructure, which include the follow
 
 
 ## Step 1: Main Activity: Create two Resources Groups - SQL-MI and Network
-* **1.1** Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
+* 1.1 - Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
 
 <img src="Images/picture01.png">
 
-* **1.2** Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
+* 1.2 - Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
 Now CLick on `Review + Create`.
 
 <img src="Images/picture02.png">
 
-* **1.3** As soon as you have the Validation passed green light, click on `Create`
+* 1.3 - As soon as you have the Validation passed green light, click on `Create`
 
 <img src="Images/picture03.png">
+
+* 1.4 - Create the Resource Group that will be used for the Network Configurations. Click on `Create a Resource Group` and Select the desired `Subscription`, `Resource group` name and `Region`.
+Now CLick on `Review + Create`.
+
+<img src="Images/picture04.png">
+
+* 1.5 - As soon as you have the Validation passed green light, click on `Create`
+
+<img src="Images/picture05.png">
+
+
+* 1.6 - Resource Group Summary for the SQL-Managed Instance Disaster Recovery Implementation:
+
+<img src="Images/picture06.png">
+
+## Step 2: DDoS Standard Design
+
+* 2.1 DDoS Standard
+On the moment to create your network for the SQL-MI, is recommend to enable the DDoS Standard. 
+Azure DDoS basic protection is integrated into the Azure platform by default and at no additional cost. 
+Azure DDoS standard protection is a premium paid service that offers enhanced DDoS mitigation capabilities via adaptive tuning, attack notification, and telemetry to protect against the impacts of a DDoS attack for all protected resources within this virtual network.
+
+Search for `DDoS protection plans` and then create a protection plan following the steps below:
+
+<img src="Images/picture07.png">
+
+
+
+
+
 
 
 
