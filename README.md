@@ -538,18 +538,18 @@ SELECT * FROM dbo.Customers;
 * 7.4 It’s **important** that the Collation and Time zone are the same on booth instances. In case of Collation, check with your developers which Collation are they using on the on-premise implementation. During the SQL Managed Instances Requirments, we saw that the same DNS needs to be use. To garantee that you wont have any problem on that space, be sure to click on `use this instance as Failover Group Secondary`
 
 <p align="center">
-  <img src="Images/picture67.png" alt="drawing" width="600"/>
+  <img src="Images/picture68.png" alt="drawing" width="600"/>
 </p>
 
 * 7.5 The price Tier that you will use for the Second Instance needs to be exaclty the same as the first one.
 
 <p align="center">
-  <img src="Images/picture68.png" alt="drawing" width="600"/>
+  <img src="Images/picture69.png" alt="drawing" width="600"/>
 </p>
 
 7.6 After around 4 to 6 hours, the second Instance will be ready for use. As you can see, at this moment there are 2 Managed Instated created (EAST-US2 and CENTRAL-US)
 
 <p align="center">
-  <img src="Images/picture69.png" alt="drawing" width="600"/>
+  <img src="Images/picture70.png" alt="drawing" width="600"/>
 </p>
 
