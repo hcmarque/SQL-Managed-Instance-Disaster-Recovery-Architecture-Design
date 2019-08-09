@@ -451,7 +451,7 @@ In this section, you create a table in the newly created TutorialDB database. Be
 In the database drop-down list, select the database that you want, as shown here:
 
 <p align="center">
-  <img src="Images/picture59.png" alt="drawing" width="600"/>
+  <img src="Images/picture60.png" alt="drawing" width="600"/>
 </p>
 
 * 6.13 Paste the following T-SQL code snippet into the query window, select it, and then select Execute (or select F5 on your keyboard).
@@ -476,22 +476,17 @@ GO
 * 6.14 You can either replace the existing text in the query window or append it to the end. To execute everything in the query window, select Execute. To execute a portion of the text, highlight that portion, and then select Execute.
 
 <p align="center">
-  <img src="Images/picture60.png" alt="drawing" width="600"/>
+  <img src="Images/picture61.png" alt="drawing" width="600"/>
 </p>
 
 * 6.15 After the query is complete, the new Customers table is displayed in the list of tables in Object Explorer. If the table isn't displayed, right-click the TutorialDB > Tables node in Object Explorer, and then select Refresh.
 
 <p align="center">
-  <img src="Images/picture61.png" alt="drawing" width="600"/>
-</p>
-
-* 6.16 Insert rows into the new table
-
-<p align="center">
   <img src="Images/picture62.png" alt="drawing" width="600"/>
 </p>
 
-* 6.17 Insert some rows into the Customers table that you created previously. To do so, paste the following T-SQL code snippet into the query window, and then select Execute:
+* 6.16 Insert rows into the new table
+Insert some rows into the Customers table that you created previously. To do so, paste the following T-SQL code snippet into the query window, and then select Execute:
 
 ```
 -- Insert rows into table 'Customers'
