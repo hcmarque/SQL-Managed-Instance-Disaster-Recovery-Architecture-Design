@@ -1,1 +1,1 @@
-# hcmarque-SQL-Managed-Instance-Disaster-Recovery-Architecture-Design
+# Managed-Instance-Disaster-Recovery-Architecture-Design
