@@ -36,30 +36,42 @@ For the First Step, let’s create your Infrastructure, which include the follow
 ## Step 1: Main Activity: Create two Resources Groups - SQL-MI and Network
 * 1.1 - Create the Resource Group that will be used for both SQL Managed Instances (Primary and Secondary) –  Needs to be under the same Resource Group, otherwise your Failover Group wont work on later step). Click on `Create a Resource Group`
 
-<img src="Images/picture01.png">
+<p align="center">
+  <img src="Images/picture02.png" alt="drawing" width="600"/>
+</p>
 
 * 1.2 - Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
 Now CLick on `Review + Create`.
 
-<img src="Images/picture02.png">
+<p align="center">
+  <img src="Images/picture03.png" alt="drawing" width="600"/>
+</p>
 
 * 1.3 - As soon as you have the Validation passed green light, click on `Create`
 
-<img src="Images/picture03.png">
+<p align="center">
+  <img src="Images/picture04.png" alt="drawing" width="600"/>
+</p>
 
 * 1.4 - Create the Resource Group that will be used for the Network Configurations. Click on `Create a Resource Group` and Select the desired `Subscription`, `Resource group` name and `Region`.
 Now CLick on `Review + Create`.
 
-<img src="Images/picture04.png">
+<p align="center">
+  <img src="Images/picture05.png" alt="drawing" width="600"/>
+</p>
 
 * 1.5 - As soon as you have the Validation passed green light, click on `Create`
 
-<img src="Images/picture05.png">
+<p align="center">
+  <img src="Images/picture06.png" alt="drawing" width="600"/>
+</p>
 
 
 * 1.6 - Resource Group Summary for the SQL-Managed Instance Disaster Recovery Implementation:
 
-<img src="Images/picture07.png">
+<p align="center">
+  <img src="Images/picture07.png" alt="drawing" width="600"/>
+</p>
 
 ## Step 2: DDoS Standard Design
 
@@ -70,32 +82,48 @@ Azure DDoS standard protection is a premium paid service that offers enhanced DD
 
 Search for `DDoS protection plans` and then create a protection plan following the steps below:
 
-<img src="Images/picture08.png">
+<p align="center">
+  <img src="Images/picture08.png" alt="drawing" width="600"/>
+</p>
 
 * 2.2 DDoS Parameters:
 Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for booth Regions, in this step will be to CENTRAL-US. Click in `Review + Create` and then, `Create` after the Validation.
 
-<img src="Images/picture09.png">
+<p align="center">
+  <img src="Images/picture09.png" alt="drawing" width="600"/>
+</p>
 
 
 * 2.3 Create now for another region that you will launch your second instance: 
 
-<img src="Images/picture10.png">
+<p align="center">
+  <img src="Images/picture10.png" alt="drawing" width="600"/>
+</p>
 
 * 2.4 Create the DDoS Standard selecting the `Subscription`, `Resource Group` (The Network Resource Group that you just created on the previous step, Instance Details with the `Name` and `Region` Create the DDoS plan for booth Regions, in this step will be to EAST-US2. Click in `Review + Create` and then, `Create` after the Validation.
 
-<img src="Images/picture11.png">
+<p align="center">
+  <img src="Images/picture11.png" alt="drawing" width="600"/>
+</p>
 
-<img src="Images/picture12.png">
+<p align="center">
+  <img src="Images/picture12.png" alt="drawing" width="600"/>
+</p>
 
 * 2.5 Back now to the Network Resource Group to see that the DDoS Protection Plan was created and is ready to be attached to a vnet that you will create now.
 
-<img src="Images/picture13.png">
+<p align="center">
+  <img src="Images/picture13.png" alt="drawing" width="600"/>
+</p>
 
 
 ## Step 3: Create the Virtual Network on booth Regions
 
 * 3.1 Create the Virtual Network Clicking in Add and type Virtual Network. Click in Create as demonstrated on the picture below.
+
+<p align="center">
+  <img src="Images/picture14.png" alt="drawing" width="600"/>
+</p>
 
 
 
