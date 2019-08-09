@@ -1,5 +1,7 @@
+**(working in progress)**
+
 # SQL-Managed Instance / Disaster Recovery Architecture 
-# Details and Step by Step Implementation 
+# Step by Step Implementation
 SQL Managed Instance Installation process - Step by Step to Disaster Recovery - Ready for Massive roll out 
 
 This document provide the Best Practice guidence for the SQL-Managed Instance implementation considering a Disaster Recovery Architecture with a full Failover Group configured.
@@ -21,6 +23,15 @@ In order to ilustrate what you will have at the end of this deployment, please f
 * Included on this deployment - please consider as **Best Practice** based on numbers of big customers deployment:
 * 2 Regions (MUST be Pair Regions at this moment - this will garantee the Disaster Recovery desing. Across the region pairs Azure serializes platform updates (planned maintenance), so that only one paired region is updated at a time. In the event of an outage affecting multiple regions, at least one region in each pair will be prioritized for recovery. - For the example below, I chose **EAST-US2 and CENTRAL-US.** 
 Check [here](https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions#what-are-paired-regions) the Azure Regions orginized in Pairs availables that would help you on your Region definition for your Network Design.
+* Related to the Network configuration, please find [here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-howto-managed-instance#network-configuration) details that needs to be considered during your planning session:
+    - Determine size of a managed instance subnet – Managed instance is placed in dedicates subnet that cannot be resized once you add the resources inside. Therefore, you would need to calculate what IP range of addresses would be required for the subnet depending on the number and types of instances that you want to deploy in the subnet.
+    - Create new VNet and a DEDICATED subnet for a managed instance – Azure VNet and subnet where you want to deploy your managed instances must be configured according to the network requirements described here. In this guide you can find the easiest way to create your new VNet and subnet properly configured for managed instances.
+    - Configure existing VNet and subnet for a managed instance – if you want to configure your existing VNet and subnet to deploy managed instances inside, here you can find the script that checks the network requirements and make configures your subnet according to the requirements.
+    - Configure custom DNS – you need to configure custom DNS if you want to access external resources on the custom domains from your managed instance via linked server of db mail profiles.
+Sync network configuration - It might happen that although you integrated your app with an Azure Virtual Network, you can't establish connection to a managed instance. One thing you can try is to refresh networking configuration for your service plan.
+    - Find management endpoint IP address – Managed instance uses public endpoint for management-purposes. You can determine IP address of the management endpoint using the script described here.
+    - Verify built-in firewall protection – Managed instance is protected with built-in firewall that allows the traffic only on necessary ports. You can check and verify the built-in firewall rules using the script described in this guide.
+    - Connect applications – Managed instance is placed in your own private Azure VNet with private IP address. Learn about different patterns for connecting the applications to your managed instance.
 
 E2E SQL-Managed Instance Architecture:
 
@@ -274,6 +285,39 @@ As soon as booth VPN Gateways were created, back to the Github-Network Resource 
 <p align="center">
   <img src="Images/picture34.png" alt="drawing" width="600"/>
 </p>
+
+<p align="center">
+  <img src="Images/picture35.png" alt="drawing" width="600"/>
+</p>
+
+
+* 5.2 Search for `SQL Managed Instances` and click to start to deploy this service
+
+<p align="center">
+  <img src="Images/picture36.png" alt="drawing" width="600"/>
+</p>
+
+* 5.3 Click on Create SQL Managed Instances
+
+<p align="center">
+  <img src="Images/picture37.png" alt="drawing" width="600"/>
+</p>
+
+* 5.4 Add the SQL-MI parameters as described on the picture below. 
+
+<p align="center">
+  <img src="Images/picture38.png" alt="drawing" width="600"/>
+</p>
+
+
+
+
+
+
+
+
+
+
 
 
 
