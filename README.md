@@ -418,7 +418,7 @@ Create a database named TutorialDB by following the below steps:
 Right-click your server instance in Object Explorer, and then select New Query:
 
 <p align="center">
-  <img src="Images/picture54.png" alt="drawing" width="600"/>
+  <img src="Images/picture56.png" alt="drawing" width="600"/>
 </p>
 
 * 6.9 Into the query window, paste the following T-SQL code snippet:
@@ -440,4 +440,72 @@ GO
   <img src="Images/picture58.png" alt="drawing" width="600"/>
 </p>
 
+* 6.11 After the query is complete, the new TutorialDB database appears in the list of databases in Object Explorer. If it isn't displayed, right-click the Databases node, and then select Refresh.
+
+<p align="center">
+  <img src="Images/picture59.png" alt="drawing" width="600"/>
+</p>
+
+* 6.12 Create a table in the new database
+In this section, you create a table in the newly created TutorialDB database. Because the query editor is still in the context of the master database, switch the connection context to the TutorialDB database by doing the following steps:
+In the database drop-down list, select the database that you want, as shown here:
+
+<p align="center">
+  <img src="Images/picture59.png" alt="drawing" width="600"/>
+</p>
+
+* 6.13 Paste the following T-SQL code snippet into the query window, select it, and then select Execute (or select F5 on your keyboard).
+
+```
+-- Create a new table called 'Customers' in schema 'dbo'
+-- Drop the table if it already exists
+IF OBJECT_ID('dbo.Customers', 'U') IS NOT NULL
+DROP TABLE dbo.Customers
+GO
+-- Create the table in the specified schema
+CREATE TABLE dbo.Customers
+(
+   CustomerId        INT    NOT NULL   PRIMARY KEY, -- primary key column
+   Name      [NVARCHAR](50)  NOT NULL,
+   Location  [NVARCHAR](50)  NOT NULL,
+   Email     [NVARCHAR](50)  NOT NULL
+);
+GO
+```
+
+* 6.14 You can either replace the existing text in the query window or append it to the end. To execute everything in the query window, select Execute. To execute a portion of the text, highlight that portion, and then select Execute.
+
+<p align="center">
+  <img src="Images/picture60.png" alt="drawing" width="600"/>
+</p>
+
+* 6.15 After the query is complete, the new Customers table is displayed in the list of tables in Object Explorer. If the table isn't displayed, right-click the TutorialDB > Tables node in Object Explorer, and then select Refresh.
+
+<p align="center">
+  <img src="Images/picture61.png" alt="drawing" width="600"/>
+</p>
+
+* 6.16 Insert rows into the new table
+
+<p align="center">
+  <img src="Images/picture62.png" alt="drawing" width="600"/>
+</p>
+
+* 6.17 Insert some rows into the Customers table that you created previously. To do so, paste the following T-SQL code snippet into the query window, and then select Execute:
+
+```
+-- Insert rows into table 'Customers'
+INSERT INTO dbo.Customers
+   ([CustomerId],[Name],[Location],[Email])
+VALUES
+   ( 1, N'Orlando', N'Australia', N''),
+   ( 2, N'Keith', N'India', N'keith0@adventure-works.com'),
+   ( 3, N'Donna', N'Germany', N'donna0@adventure-works.com'),
+   ( 4, N'Janet', N'United States', N'janet1@adventure-works.com')
+GO
+```
+
+<p align="center">
+  <img src="Images/picture63.png" alt="drawing" width="600"/>
+</p>
 
