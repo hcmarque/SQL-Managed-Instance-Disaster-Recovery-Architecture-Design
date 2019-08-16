@@ -11,7 +11,7 @@ In order to undertand the SQL Managed Instance Resource Limits, check [here](htt
 * Gen 4 vs Gen 5;
 * Managed instance has two service tiers: General Purpose and Business Critical. These tiers provide different capabilities, as described in this [table](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 
-## Steps that will be used on this guide:
+## Topics that you will work in this guide:
 * [End to End Architecture](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#e2e-architecture)
 * [Requirements for the SQL Managed Instances in Disaster Recovery implementation](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#requirements-to-have-your-disaster-recovery-implementation-working)
 * [Create the Resouce Groups](https://github.com/hcmarque/SQL-Managed-Instance-Disaster-Recovery-Architecture-Design/blob/master/README.md#step-1-main-activity-create-two-resources-groups---sql-mi-and-network)
