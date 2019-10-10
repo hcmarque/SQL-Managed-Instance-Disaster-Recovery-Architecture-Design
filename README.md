@@ -102,7 +102,7 @@ Now CLick on `Review + Create`.
   <img src="Images/picture07.png" alt="drawing" width="600"/>
 </p>
 
-## Step 2: DDoS Standard Design
+## Step 2: DDoS Standard Design (Optional)
 
 * 2.1 DDoS Standard
 On the moment to create your network for the SQL-MI, is recommend to enable the DDoS Standard. 
