@@ -69,7 +69,7 @@ Sync network configuration - It might happen that although you integrated your a
   <img src="Images/picture02.png" alt="drawing" width="600"/>
 </p>
 
-* 1.2 - Select the desired `Subscription`, `Resource group` name and `Region`. **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
+* 1.2 - Select the desired `Subscription`, `Resource group` name and `Region` **Remember** In case of Disaster Recovery design, please consider the Pair regions considerations mentioned E2E Architecture considerations. In this Architecture Desing Example, we will consider EAST-US2 and CENTRAL-US for the Instances.
 Now CLick on `Review + Create`.
 
 <p align="center">
