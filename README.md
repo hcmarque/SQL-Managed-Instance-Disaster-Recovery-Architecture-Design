@@ -1,5 +1,5 @@
 # SQL-Managed Instance: Disaster Recovery Reference Architecture 
-# Step by Step Implementation
+# Step by Step Implementation Guide
 
 SQL Managed Instance Installation process. - Step by Step to Disaster Recovery - Ready for Massive roll out ;
 
