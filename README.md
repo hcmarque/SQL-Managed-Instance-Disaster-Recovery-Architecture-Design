@@ -1,7 +1,7 @@
 # SQL-Managed Instance: Disaster Recovery Reference Architecture 
 # Step by Step Implementation Guide
 
-SQL Managed Instance Installation process. - Step by Step to Disaster Recovery - Ready for Massive roll out ;
+SQL Managed Instance Installation process. - Step by Step to Disaster Recovery - Ready for Massive roll out;
 
 This document provide the Best Practice guidence for the SQL-Managed Instance implementation considering a Disaster Recovery Architecture with a full Failover Group configured.
 
